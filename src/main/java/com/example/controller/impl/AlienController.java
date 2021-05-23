@@ -45,6 +45,7 @@ public class AlienController {
 	@RequestMapping("/aliens")
 	@ResponseBody
 	public List<Alien> getAliens() {
+		System.out.println("Getting all aliens");
 		return alienJpaRepo.findAll();
 		
 	}
