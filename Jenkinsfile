@@ -7,6 +7,11 @@ pipeline {
     DOCKERHUB_CREDENTIALS = credentials('debdutta8-dockerhub')
   }
   stages {
+    stage ('Build App') {
+            steps {               
+                    sh 'mvn clean install -DskipTests=true '                                    
+            }
+        }
     stage('Build') {
       steps {
         sh 'docker build -t debdutta8/docker-spring-boot:latest .'
