@@ -1,5 +1,8 @@
 pipeline {
   agent { label 'master' }
+  tools{
+  	maven "3.8.1"
+  	}
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
